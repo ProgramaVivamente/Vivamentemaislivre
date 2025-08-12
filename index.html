@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VivaMente+ | Nutrição e Psicologia Online</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    background: #fff;
+    color: #333;
+  }
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+  }
+  header .logo {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #2A75BB;
+  }
+  nav a {
+    text-decoration: none;
+    color: #444;
+    margin-left: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #E26B27;
+  }
+  main {
+    padding-top: 80px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .hero-text {
+    flex: 1 1 400px;
+  }
+  .hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2A75BB;
+    margin-bottom: 1rem;
+  }
+  .hero-text p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  .btn-primary {
+    background: #E26B27;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .btn-primary:hover {
+    background: #c35b20;
+  }
+  .hero-image {
+    flex: 1 1 400px;
+  }
+  .hero-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+    object-fit: cover;
+  }
+  h2.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2A75BB;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .services {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .service-card {
+    background: #f9f9f9;
+    border-radius: 20px;
+    padding: 2rem;
+    flex: 1 1 280px;
+    box-shadow: 0 6px 18px rgb(0 0 0 / 0.05);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+  }
+  .service-card h3 {
+    color: #2A75BB;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .service-card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .team {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .team-photo {
+    flex: 1 1 300px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+  }
+  .team-photo img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 350px;
+  }
+  .team-text {
+    flex: 1 1 400px;
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 500;
+  }
+  .testimonials {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .testimonial-item {
+    background: #f5f9ff;
+    border-left: 5px solid #E26B27;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    font-style: italic;
+    color: #333;
+  }
+  .testimonial-author {
+    text-align: right;
+    font-weight: 700;
+    color: #2A75BB;
+    margin-top: 0.5rem;
+  }
+  .contact-form {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+  }
+  .contact-form label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: #444;
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  .contact-form button {
+    background: #E26B27;
+    color: white;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+  }
+  .contact-form button:hover {
+    background: #c35b20;
+  }
+  footer {
+    background: #2A75BB;
+    color: white;
+    text-align: center;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+  }
+  @media(max-width: 720px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .team {
+      flex-direction: column;
+      text-align: center;
+    }
+    .team-photo img {
+      height: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">VivaMente+</div>
+  <nav>
+    <a href="#hero">Início</a>
+    <a href="#services">Serviços</a>
+    <a href="#team">Equipe</a>
+    <a href="#testimonials">Depoimentos</a>
+    <a href="#contact">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <section id="hero" class="hero">
+    <div class="hero-text">
+      <h1>Cuidado completo para seu corpo e mente</h1>
+      <p>Você não está sozinho(a). VivaMente+ é seu protetor e ajudador na jornada de saúde física e emocional. Atendimento online com nutricionistas e psicólogos que realmente se importam.</p>
+      <a href="#contact" class="btn-primary">Agende sua consulta</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80" alt="Mulher feliz e confiante" />
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Nossos Serviços</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Consulta Nutricional</h3>
+        <p>Um compromisso com sua vida: hábitos alimentares que respeitam seu ritmo e te trazem saúde e prazer.</p>
+      </div>
+      <div class="service-card">
+        <h3>Consulta Psicológica</h3>
+        <p>Espaço seguro para ser ouvido(a) e acolhido(a). Juntos enfrentamos seus desafios emocionais.</p>
+      </div>
+      <div class="service-card">
+        <h3>Planos Integrados</h3>
+        <p>Cuidado completo com nutrição e psicologia para uma transformação verdadeira e duradoura.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2 class="section-title">Nossa Equipe</h2>
+    <div class="team">
+      <div class="team-photo">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Profissional da equipe" />
+      </div>
+      <div class="team-text">
+        <p>Nossa equipe é formada por especialistas dedicados que cuidam de você como se fosse da família. Aqui, você encontra ajuda verdadeira e empatia em cada atendimento.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">Depoimentos</h2>
+    <div class="testimonial-item">
+      “Quando comecei, me sentia perdida e sem forças para cuidar de mim mesma. O VivaMente+ não só me ajudou a melhorar minha alimentação, mas também me acolheu emocionalmente. Hoje, tenho saúde e confiança para seguir em frente.”
+      <div class="testimonial-author">— Ana S., 34 anos</div>
+    </div>
+    <div class="testimonial-item">
+      “O suporte psicológico junto com a orientação nutricional fez toda a diferença. Senti que finalmente tinha alguém do meu lado, que realmente entendia e queria ajudar.”
+      <div class="testimonial-author">— João M., 42 anos</div>
+    </div>
+    <div class="testimonial-item">
+      “Não é só um atendimento, é um cuidado de verdade. Recomendo para quem sente que precisa de ajuda, mas não sabe por onde começar.”
+      <div class="testimonial-author">— Mariana T., 29 anos</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contato</h2>
+    <form class="contact-form">
+      <label for="name">Nome completo</label>
+      <input type="text" id="name" name="name" required />
+      
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required />
+      
+      <label for="service">Serviço desejado</label>
+      <select id="service" name="service" required>
+        <option value="">Selecione</option>
+        <option value="nutricao">Consulta Nutricional</option>
+        <option value="psicologia">Consulta Psicológica</option>
+        <option value="plano-integrado">Plano Integrado</option>
+      </select>
+      
+      <label for="program_interest">O que você deseja do programa?</label>
+      <select id="program_interest" name="program_interest" required>
+        <option value="">Selecione</option>
+        <option value="somente_nutricao">Quero apenas Nutrição</option>
+        <option value="somente_psicologia">Quero apenas Psicologia</option>
+        <option value="plano_integrado">Quero o Plano Integrado (Nutrição + Psicologia)</option>
+        <option value="mais_informacoes">Quero mais informações antes de decidir</option>
+      </select>
+      
+      <label for="message">Mensagem</label>
+      <textarea id="message" name="message" rows="4" placeholder="Conte-nos como podemos ajudar" required></textarea>
+      
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 VivaMente+ | Nutrição & Psicologia Online. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
